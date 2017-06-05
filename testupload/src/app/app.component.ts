@@ -4,7 +4,7 @@ import {  FileUploader } from 'ng2-file-upload/ng2-file-upload';
 import { Http, Response } from '@angular/http';
 import "rxjs/add/operator/do";
 import "rxjs/add/operator/map";
-const URL = '/';
+const URL = 'http://localhost:3000';
 
 @Component({
   selector: 'app-root',
@@ -23,9 +23,8 @@ export class AppComponent implements OnInit {
         };
 	}
 
-	constructor(private http: Http, private el: ElementRef) {
+	constructor(private http: Http, private el: ElementRef) {}
 	
-	}
 	upload() {
         let inputEl: HTMLInputElement = this.el.nativeElement.querySelector('#photo');
         console.log("iam+ "+inputEl);
@@ -42,7 +41,7 @@ export class AppComponent implements OnInit {
                   },
                     (error) => alert(error)
                 );
-               
+
         }
        }
 }
